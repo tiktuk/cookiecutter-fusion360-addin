@@ -1,8 +1,8 @@
-{{ cookiecutter.package_name }}
-{{ cookiecutter.package_name|count * "=" }}
+{{ cookiecutter.addin_name }}
+{{ cookiecutter.addin_name|count * "=" }}
 
 
-{{ cookiecutter.package_description }}
+{{ cookiecutter.addin_description }}
 
 Usage
 -----
