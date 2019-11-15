@@ -18,7 +18,7 @@ if __name__ == '__main__':
         manifest = json.loads(text)
         manifest['id'] = str(uuid.uuid4())
         f.seek(0)
-        f.write(json.dumps(manifest))
+        f.write(json.dumps(manifest, indent=4, sort_keys=True))
         f.truncate()
 
 
