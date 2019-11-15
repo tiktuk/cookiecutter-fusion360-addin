@@ -1,7 +1,7 @@
 {
 	"autodeskProduct":	"Fusion360",
 	"type":	"addin",
-	"id":	"{{ (999999999999999999 | random_hash | uuid }}",
+	"id":	"{{ 999999999999999999 | random_hash | uuid }}",
 	"author":	"{{ cookiecutter.author_name }}",
 	"description":	{
 		"":	"{{ cookiecutter.addin_description }}"
