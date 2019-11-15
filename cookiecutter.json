@@ -6,5 +6,4 @@
     "addin_name": "cookiecutter_fusion360_addin",
     "addin_version": "0.1.0",
     "addin_description": "Generic Fusion 360 addin leveraging apper as a submodule",
-    "addin_url": "https://github.com/tapnair/cookiecutter-fusion360-addin"
 }
