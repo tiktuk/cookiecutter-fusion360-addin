@@ -1,13 +1,10 @@
 {
-    "author_name": "Louis Taylor",
-    "author_email": "louis@kragniz.eu",
+    "author_name": "Patrick Rainsberry",
+    "author_email": "my@email.com",
+    "author_organization": "my_company",
 
-    "package_name": "cookiecutter_pypackage_minimal",
-    "package_version": "0.1.0",
-    "package_description": "An opinionated, minimal cookiecutter template for Python packages",
-    "package_url": "https://github.com/borntyping/cookiecutter-pypackage-minimal",
-    
-    "readme_pypi_badge": true,
-    "readme_travis_badge": true,
-    "readme_travis_url": "https://travis-ci.org/borntyping/cookiecutter-pypackage-minimal"
+    "addin_name": "cookiecutter_fusion360_addin",
+    "addin_version": "0.1.0",
+    "addin_description": "Generic Fusion 360 addin leveraging apper as a submodule",
+    "addin_url": "https://github.com/tapnair/cookiecutter-fusion360-addin"
 }

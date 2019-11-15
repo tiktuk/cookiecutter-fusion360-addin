@@ -1,0 +1,3 @@
+[submodule "{{cookiecutter.addin_name}}/apper"]
+	path = {{cookiecutter.addin_name}}/apper
+	url = https://github.com/tapnair/apper
