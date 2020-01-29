@@ -1,7 +1,7 @@
 
 import adsk.core
-from ..apper import apper
-from ..apper.apper import AppObjects
+import apper
+from apper import AppObjects
 
 
 class SampleCommand1(apper.Fusion360CommandBase):
