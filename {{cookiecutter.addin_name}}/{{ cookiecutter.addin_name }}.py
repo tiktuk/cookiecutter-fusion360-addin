@@ -27,7 +27,7 @@ try:
     from .commands.SampleWebRequestEvent import SampleWebRequestOpened
 
     # Create our addin definition object
-    my_addin = apper.FusionApp('{{ cookiecutter.addin_name }} ', "{{ cookiecutter.author_organization }} ", False)
+    my_addin = apper.FusionApp(config.app_name, config.company_name, False)
 
     # Creates a basic Hello World message box on execute
     my_addin.add_command(
