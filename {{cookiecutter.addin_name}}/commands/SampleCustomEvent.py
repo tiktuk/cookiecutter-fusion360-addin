@@ -13,7 +13,7 @@ class SampleCustomEvent1(apper.Fusion360CustomThread):
         ao = apper.AppObjects()
         ao.ui.messageBox(str(event_dict))
 
-    def run_in_thread(self, thread, event_id):
+    def run_in_thread(self, thread, event_id, input_data=None):
         ao = apper.AppObjects()
 
         # Every five seconds fire a custom event, passing a random number.
