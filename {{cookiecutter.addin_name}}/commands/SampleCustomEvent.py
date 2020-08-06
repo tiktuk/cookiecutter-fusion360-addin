@@ -7,7 +7,7 @@ import time
 import apper
 
 
-class SampleCustomEvent1(apper.Fusion360CustomThread):
+class SampleCustomEvent(apper.Fusion360CustomThread):
 
     def custom_event_received(self, event_dict):
         ao = apper.AppObjects()

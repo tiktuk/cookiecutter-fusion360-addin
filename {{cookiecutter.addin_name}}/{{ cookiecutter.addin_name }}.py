@@ -1,35 +1,32 @@
-
-import os
-import sys
 import adsk.core
 import traceback
 
-app_path = os.path.dirname(__file__)
-
-sys.path.insert(0, app_path)
-sys.path.insert(0, os.path.join(app_path, 'apper'))
+from.startup import setup_app, cleanup_app, get_app_path
+setup_app(__file__)
 
 try:
     import config
     import apper
 
     # Basic Fusion 360 Command Base samples
-    from .commands.SampleCommand1 import SampleCommand1
-    from .commands.SampleCommand2 import SampleCommand2
+    from commands.SampleCommand1 import SampleCommand1
+    from commands.SampleCommand2 import SampleCommand2
 
     # Palette Command Base samples
-    from .commands.SamplePaletteCommand import SamplePaletteSendCommand, SamplePaletteShowCommand
+    from commands.SamplePaletteCommand import SamplePaletteSendCommand, SamplePaletteShowCommand
 
     # Various Application event samples
-    from .commands.SampleCustomEvent import SampleCustomEvent1
-    from .commands.SampleDocumentEvents import SampleDocumentEvent1, SampleDocumentEvent2
-    from .commands.SampleWorkspaceEvents import SampleWorkspaceEvent1
-    from .commands.SampleWebRequestEvent import SampleWebRequestOpened
-    from .commands.SampleCommandEvents import SampleCommandEvent
+    from commands.SampleCustomEvent import SampleCustomEvent
+    from commands.SampleDocumentEvents import SampleDocumentEvent1, SampleDocumentEvent2
+    from commands.SampleWorkspaceEvents import SampleWorkspaceEvent
+    from commands.SampleWebRequestEvent import SampleWebRequestOpened
+    from commands.SampleCommandEvents import SampleCommandEvent
+    from commands.SampleActiveSelectionEvents import SampleActiveSelectionEvent
 
 
 # Create our addin definition object
     my_addin = apper.FusionApp(config.app_name, config.company_name, False)
+    my_addin.root_path = get_app_path(__file__)
 
     # Creates a basic Hello World message box on execute
     my_addin.add_command(
@@ -75,7 +72,8 @@ try:
             'command_promoted': True,
             'palette_id': 'sample_palette',
             'palette_name': 'Sample Fusion 360 HTML Palette',
-            'palette_html_file_url': 'palette_html/{{ cookiecutter.addin_name }}.html',
+            'palette_html_file_url': 'commands/palette_html/{{ cookiecutter.addin_name }}.html',
+            'palette_use_new_browser': True,
             'palette_is_visible': True,
             'palette_show_close_button': True,
             'palette_is_resizable': True,
@@ -115,6 +113,8 @@ try:
 
     # my_addin.add_command_event("{{ cookiecutter.addin_name }}_command_event", app.userInterface.commandStarting, SampleCommandEvent)
 
+    # my_addin.add_command_event("{{ cookiecutter.addin_name }}_active_selection_event", ui.activeSelectionChanged, SampleActiveSelectionEvent)
+
 except:
     app = adsk.core.Application.get()
     ui = app.userInterface
@@ -131,5 +131,4 @@ def run(context):
 
 def stop(context):
     my_addin.stop_app()
-    sys.path.pop(0)
-    sys.path.pop(0)
+    cleanup_app(__file__)
