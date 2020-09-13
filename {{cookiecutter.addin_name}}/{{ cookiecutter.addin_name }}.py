@@ -1,7 +1,7 @@
 import adsk.core
 import traceback
 
-from.startup import setup_app, cleanup_app, get_app_path
+from .startup import setup_app, cleanup_app, get_app_path
 setup_app(__file__)
 
 try:
@@ -24,7 +24,7 @@ try:
     from commands.SampleActiveSelectionEvents import SampleActiveSelectionEvent
 
 
-# Create our addin definition object
+    # Create our addin definition object
     my_addin = apper.FusionApp(config.app_name, config.company_name, False)
     my_addin.root_path = get_app_path(__file__)
 
