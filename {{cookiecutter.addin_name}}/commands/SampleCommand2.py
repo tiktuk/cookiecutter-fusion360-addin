@@ -77,7 +77,7 @@ class SampleCommand2(apper.Fusion360CommandBase):
         # Create a default value using a string
         default_value = adsk.core.ValueInput.createByString('1.0 in')
 
-        # Get teh user's current units
+        # Get the user's current units
         default_units = ao.units_manager.defaultLengthUnits
 
         # Create a value input.  This will respect units and user defined equation input.
